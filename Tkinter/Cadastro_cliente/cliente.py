@@ -18,12 +18,10 @@ janela.geometry("600x600")
 
 # Label e imputs de entrada
 Label(janela, text="ID: ").grid(row=0, column=0, padx=5, pady=5)
-# Entry = input
-# "state=DISABLED" = deixa um campo que não pode ser editado
 id = Entry(janela, state=DISABLED, width=5)
 id.grid(row=0, column=1, padx=5, pady=5)
 
-Label(janela, text="NOME DO LUTADOR: ").grid(row=1, column=0, padx=5, pady=5)
+Label(janela, text="NOME: ").grid(row=1, column=0, padx=5, pady=5)
 nome = Entry(janela, width=30)
 nome.grid(row=1, column=1, padx=5, pady=5)
 
@@ -35,20 +33,13 @@ Label(janela, text="TELEFONE: ").grid(row=3, column=0, padx=5, pady=5)
 telefone = Entry(janela, width=30)
 telefone.grid(row=3, column=1, padx=5, pady=5)
 
-# ________________________2ºSEGUNDO______________________________
-
-# Definindo a fonte personalizada
-import tkinter.font as tkFont  # Importando o módulo font
-fonte_personalizada = tkFont.nametofont("TkDefaultFont")  # Pega a fonte padrão do sistema
-fonte_personalizada.actual()  # Asegura que as configurações sejam aplicadas
-fonte_personalizada.configure(size=12)  # Ajuste o tamanho da fonte conforme necessário
 
 
 # Listar Clientes
 
 tabela = ttk.Treeview(janela, columns=("ID" , "Nome" , "Email" , "Telefone"), show="headings")
 tabela.heading("ID" , text="ID")
-tabela.heading("Nome" , text="Nome do Lutador")
+tabela.heading("Nome" , text="Nome")
 tabela.heading("Email" , text="Email")
 tabela.heading("Telefone" , text="Telefone")
 
@@ -57,8 +48,7 @@ tabela.column("Nome" , width=150)
 tabela.column("Email" , width=150)
 tabela.column("Telefone" , width=150)
 
-# Aplicando a fonte personalizada na tabela
-tabela.tag_configure("fonte_tabela", font=fonte_personalizada)
+
 
 tabela.grid(row=5, column=0, columnspan=4, padx=40, pady=80)
 
@@ -69,9 +59,9 @@ for row in cursor.fetchall():
 
 
 
-# ________________________1ºPRIMEIRO______________________________
+
 # FUNÇÕES:
-# "a função get estará na variável da linha do Entry"
+
 
 def cadastrar():
     nome_bd = nome.get()

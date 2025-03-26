@@ -6,7 +6,7 @@ janela.title("Voucher Turma 140")
 janela.geometry("600x400")
 
 def mudar_texto():
-    frase.config(text="HELLO UNDERWORLD, WELCOME IN THE 遊☆戯☆王, Yū☆gi☆ō")
+    frase.config(text="OLÁ MUNDO")
 
 frase = tk.Label(janela, text="Clique no botão abaixo")
 frase.pack(pady=30)
