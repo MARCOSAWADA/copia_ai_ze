@@ -1,5 +1,5 @@
 SHOW DATABASES;
-
+SHOW TABLES;
 CREATE DATABASE cliente_tk;
 
 CREATE table cliente(
@@ -9,4 +9,5 @@ CREATE table cliente(
     telefone varchar(15)
 );
 
-SHOW TABLES;
+use cliente_tk;
+select * from cliente;
